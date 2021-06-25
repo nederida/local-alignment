@@ -17,7 +17,9 @@ The maximum values are calculated for all positions in the scoring matrix. The s
 
 ### User information
 
-The input sequences of the alignment function are in a fasta format, and the resulting alignment(s) are stored in an excel file in a path of the user's choice. This path can be edited in the top of the script ("path_"). The user can change the parameters of the function, with a match score, mismatch score, and gap penalty (linear) of own choice. The fasta file can be changed in the top of the script ("path"), and sequence names can also easily be changed, as long as the squence names are in upper case letters. The resulting excel file contains two rows, one with the letters of sequence 1 and one with letters of sequence 2, aligning correctly. If there is a gap, it will be marked with "-".
+The input sequences of the alignment function must be in fasta format. The fasta file can be changed in the top of the script ("path"). The resulting alignment(s) are stored in an excel file in a path of the user's choice. This path can be edited in the top of the script ("path_"). The excel file contains two rows, one with the letters of sequence 1 and one with letters of sequence 2, aligning correctly. If there is a gap, it will be marked with "-". 
+
+The user can change the parameters of the function, with a match score, mismatch score, and gap penalty (linear) of own choice. Sequence names can also be changed to match those in the user's fasta file (must be in upper case letters). 
 
 
 ### References
