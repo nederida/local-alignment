@@ -1,10 +1,8 @@
 ### Local alignment using the Smith-Waterman algorithm ###
 
-The Smith-Waterman algorithm is an algorithm used for local alignment of two genome sequences. The algorithm is used to calculate the optimum alignment, using a gap penality (w) and match/mismatch score (ms/mms) of choice. In this project a linear gap penalty is used. 
+The Smith-Waterman algorithm is an algorithm used for local alignment of two genome sequences. The algorithm is used to calculate the optimum alignment, using a gap penality (w) and match/mismatch score (ms/mms) of choice. Using the algorithm, you generate a scoring matrix (H) for your alignment which has the dimesions of your two sequences, having the length of i (sequence 1) and j (sequence 2). Any position in the scoring matrix will be called <img src="https://render.githubusercontent.com/render/math?math=$H_{i,j}$ ">. <br>
 
-Using the algorithm, you generate a scoring matrix (H) for your alignment which has the dimesions of your two sequences, having the length of i (sequence 1) and j (sequence 2). Any position in the scoring matrix will be called <img src="https://render.githubusercontent.com/render/math?math=$H_{i,j}$ ">. <br>
-
-In the algorithm, it is the positions around a specific position that determines the value for the specific position. Of interest, are the values in the left position, in the above position and in the above left position. These are called <img src="https://render.githubusercontent.com/render/math?math=$H_{i,j-1}$ ">, <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j}$ ">, <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j-1}$ ">, respectively (Wikipedia 2020). 
+The positions around a specific position are used to determine the value for the specific position. Of interest, are the values in the left position, in the above position and in the above left position. These are called <img src="https://render.githubusercontent.com/render/math?math=$H_{i,j-1}$ ">, <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j}$ ">, <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j-1}$ ">, respectively (Wikipedia 2020). 
 
 To find the value of <img src="https://render.githubusercontent.com/render/math?math=$H_{i,j}$ ">, you look at the bases you want to align in the specific position. These bases can either form a match or a mismatch if you move diagonally, which will give different scores. This score can sometimes be low (if it's a mismatch), which will make it likely that a gap in the allignment, would give a higher score in the end. Therefore, the assigned value in the specific position is:
 
@@ -19,7 +17,7 @@ The maximum values are calculated for all positions in the scoring matrix. The s
 
 ### User information
 
-The input sequences are in a fasta format, and the resulting alignment(s) are stored in an excel file in a path of the user's choice. This path can be edited in the top of the script ("path_"). The user can change the parameters of the function, with a match score, mismatch score, and gap penalty of own choice. The fasta file can be changed in the top of the script ("path"), and sequence names can also easily be changed, as long as the squence names are in upper case letters. The resulting excel file contains two rows, one with the letters of sequence 1 and one with letters of sequence 2, aligning correctly. If there is a gap, it will be marked with "-".
+The input sequences are in a fasta format, and the resulting alignment(s) are stored in an excel file in a path of the user's choice. This path can be edited in the top of the script ("path_"). The user can change the parameters of the function, with a match score, mismatch score, and gap penalty (linear) of own choice. The fasta file can be changed in the top of the script ("path"), and sequence names can also easily be changed, as long as the squence names are in upper case letters. The resulting excel file contains two rows, one with the letters of sequence 1 and one with letters of sequence 2, aligning correctly. If there is a gap, it will be marked with "-".
 
 
 ### References
