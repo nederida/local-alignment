@@ -17,13 +17,9 @@ To find the value of <img src="https://render.githubusercontent.com/render/math?
 
 The maximum values are calculated for all positions in the scoring matrix. The scoring matrix is then used to find the optimal alignment. The optimal alignment is the alignment with the highest score. The first thing you do is find the highest score, and then you backtrack from this position, going back through the same route, that were used for the scoring. If for example <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j}-w_{1}$ "> gave the value in the current position, then you have to go to the above position next, being <img src="https://render.githubusercontent.com/render/math?math=$H_{i-1,j}$ ">. This way you continue backwards in the scoring matrix until the value of your position is 0. Then you have your finished local alignment. 
 
-### Materials
+### User information
 
-The input sequences are in a fasta format, and the output will be the possible alignments i excel format. 
-
-Fasta files are text files, which contain sequences in form of either base or aminoacid abbreviations. A sequence is named with ">" on one line, and the following lines contain the sequence itself. 
-
-
+The input sequences are in a fasta format, and the resulting alignment(s) are stored in an excel file in a path of the user's choice. This path can be edited in the top of the script ("path_"). The user can change the parameters of the function, with a match score, mismatch score, and gap penalty of own choice. The fasta file can be changed in the top of the script ("path"), and sequence names can also easily be changed, as long as the squence names are in upper case letters. The resulting excel file contains two rows, one with the letters of sequence 1 and one with letters of sequence 2, aligning correctly. If there is a gap, it will be marked with "-".
 
 
 ### References
